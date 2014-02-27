@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<project name="OdoboChallenge" default="do-deploy" basedir="."  xmlns:fx="javafx:com.sun.javafx.tools.ant">
+		 <loadproperties srcFile="build.properties"/>
+		<echo message="java.home.sdk: ${java.home.sdk}"/>
+	<target name="init-fx-tasks">
+		
+		<path id="fxant">
+			<filelist>
+				<file name="${java.home.sdk}/lib/ant-javafx.jar"/>
+				<file name="${java.home}\lib\jfxrt.jar"/>
+			</filelist>
+		</path>
+	
+		<taskdef resource="com/sun/javafx/tools/ant/antlib.xml"      
+			uri="javafx:com.sun.javafx.tools.ant"
+			classpathref="fxant"/>
+	</target>
+	<target name="setup-staging-area">
+		<delete dir="externalLibs" />
+		<delete dir="project" />
+		<delete dir="projectRefs" />
+		
+		<mkdir dir="externalLibs" />
+		
+		<copy todir="externalLibs">
+			<fileset dir="C:\Program Files\Java\jdk1.7.0_11\jre\lib">
+				<filename name="jfxrt.jar"/>	
+			</fileset>
+		</copy>
+		<copy todir="externalLibs">
+			<fileset dir="C:\Users\anna\.gradle\caches\artifacts-13\filestore\com.google.code.gson\gson\2.1\jar\2e66da15851f9f5b5079228f856c2f090ba98c38">
+				<filename name="gson-2.1.jar"/>	
+			</fileset>
+		</copy>
+		
+		<mkdir dir="project" />
+		<copy todir="project">
+			<fileset dir="C:\Users\anna\workspace\OdoboChallenge">
+				<include name="src/**" />
+			</fileset>
+		</copy>
+		
+		<mkdir dir="projectRefs" />
+	</target>
+	<target name='do-compile'>
+		<delete dir="build" />
+		<mkdir dir="build/src" />
+		<mkdir dir="build/libs" />
+		<mkdir dir="build/classes" />
+	
+		<!-- Copy project-libs references -->
+		<copy todir="build/libs">
+			<fileset dir="externalLibs">
+				<include name="gson-2.1.jar"/>
+				<include name="jfxrt.jar"/>
+			</fileset>
+		</copy>
+	
+		<!-- Copy project references -->
+	
+		<!-- Copy project sources itself -->
+		<copy todir="build/src">
+			<fileset dir="project/src">
+				<include name="**/*"/>
+			</fileset>
+		</copy>
+	
+		<javac includeantruntime="false" source="1.7" target="1.7" srcdir="build/src" destdir="build/classes" encoding="Cp1257">
+			<classpath>
+				<fileset dir="build/libs">
+					<include name="*"/>
+				</fileset>
+				<filelist>
+					<file name="C:\Program Files\Java\jdk1.7.0_03\jre\lib\jfxrt.jar"/>
+				</filelist>
+			</classpath>
+		</javac>
+		
+		<!-- Copy over none Java-Files -->
+		<copy todir="build/classes">
+		<fileset dir="project/src">
+			<exclude name="**/*.java"/>
+		</fileset>
+		</copy>
+	
+	
+	</target>
+	<target name="do-deploy" depends="setup-staging-area, do-compile, init-fx-tasks">
+		<delete file="dist"/>
+		<delete file="deploy" />
+		
+		<mkdir dir="dist" />
+		<mkdir dir="dist/libs" />
+		
+		<copy todir="dist/libs">
+			<fileset dir="externalLibs">
+				<include name="*" />
+			</fileset>
+		</copy>
+		
+		
+		<fx:resources id="appRes">
+			<fx:fileset dir="dist" includes="OdoboChallenge.jar"/>
+			<fx:fileset dir="dist" includes="libs/*"/>
+		</fx:resources> 
+		
+		<fx:application id="fxApplication"
+			name="OdoboChallenge"
+			mainClass="odobo.control.MainControl"
+		/>
+	
+		<mkdir dir="build/classes/META-INF" />
+		
+		
+		
+		<fx:jar destfile="dist/OdoboChallenge.jar">
+			<fx:application refid="fxApplication"/>
+			<fileset dir="build/classes">
+			</fileset>
+			<fx:resources refid="appRes"/>
+			
+			<manifest>
+				<attribute name="Implementation-Vendor" value="Anna Kulikova"/>
+				<attribute name="Implementation-Title" value=""/>
+				<attribute name="Implementation-Version" value="1.0"/>
+			</manifest>
+		</fx:jar>
+		
+	
+		
+		
+	</target>
+</project>

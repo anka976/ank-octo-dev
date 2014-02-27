@@ -1,0 +1,69 @@
+<wsdl:definitions xmlns:ns1="http://cxf.apache.org/bindings/xformat"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://ws.alpcot.pic.idocs.com/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="AlpcotService" targetNamespace="http://ws.alpcot.pic.idocs.com/">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://ws.alpcot.pic.idocs.com/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified"
+			targetNamespace="http://ws.alpcot.pic.idocs.com/" version="1.0">
+			<xs:element name="provideStocks" nillable="true" type="xs:anyType" />
+			<xs:element name="provideStocksResponse" nillable="true"
+				type="xs:anyType" />
+			<xs:complexType name="provideStocks">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="stocks"
+						type="tns:stock" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="stock">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="name" type="xs:string" />
+					<xs:element minOccurs="0" name="price" type="xs:decimal" />
+					<xs:element minOccurs="0" name="timestamp" type="xs:dateTime" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="provideStocksResponse">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="provideStocksClass">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="stock"
+						nillable="true" type="tns:stock" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="provideStocksResponseClass">
+				<xs:sequence />
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="provideStocksResponse">
+		<wsdl:part element="tns:provideStocksResponse" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="provideStocks">
+		<wsdl:part element="tns:provideStocks" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="AlpcotService">
+		<wsdl:operation name="provideStocks">
+			<wsdl:input message="tns:provideStocks" name="provideStocks"></wsdl:input>
+			<wsdl:output message="tns:provideStocksResponse" name="provideStocksResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="AlpcotServiceSoapBinding" type="tns:AlpcotService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="provideStocks">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="provideStocks">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="provideStocksResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="AlpcotService">
+		<wsdl:port binding="tns:AlpcotServiceSoapBinding" name="AlpcotServiceSOAP">
+			<soap:address location="http://competition.etfsm.se/alpcot/ws/alpcotService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Review id="1">
+  <ReviewIssue id="H7RKTY3C">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:50:42:264 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:54:07:529 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="9">src/main/java/de/wps/usermanagement/persistence/dao/UserManagementConstants.java</File>
+    <Type>item.type.label.optimization</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>Refactor to Enum</Summary>
+    <Description>Refactor this to an enum. Enums can pass back all of its values. and can hold attributes as well. </Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RKYYHO">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:54:36:060 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:57:03:153 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="13">src/main/java/de/wps/usermanagement/persistence/model/BoardNotificationEnum.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>useValue of instead of this own methods</Summary>
+    <Description>remove this method and use in consuming code the standard valueOf method</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RL3BVC">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:58:00:024 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:58:27:622 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="13">src/main/java/de/wps/usermanagement/persistence/model/PreferredDeliveryMethod.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>use ValueOf instead</Summary>
+    <Description>remove this method and use in consuming code the standard valueOf method</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RL4GA5">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 14:58:52:397 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:00:44:129 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="31">src/main/java/de/wps/usermanagement/web/BaseController.java</File>
+    <Type>item.type.label.clarity</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>Why Instanciate an ErrorMessage Object here?</Summary>
+    <Description>this ErrorMessage Object does not make sence?! why do we have this here? </Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RL7G88">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:01:12:296 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:02:27:673 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="12">src/main/java/de/wps/usermanagement/service/support/MessageSourceSupport.java</File>
+    <Type>item.type.label.clarity</Type>
+    <Severity>item.severity.label.normal</Severity>
+    <Summary>message support? </Summary>
+    <Description>RBO why message support? not needed and used? </Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RL9IOO">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:02:48:792 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:03:18:621 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="36">src/main/java/de/wps/usermanagement/service/UserExtService.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.label.unset</Severity>
+    <Summary>Should be removed anyway when having better persitance layer? </Summary>
+    <Description>why null check? cannot be null in any case because of undelying code.</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+  <ReviewIssue id="H7RLAQIW">
+    <ReviewIssueMeta>
+      <CreationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:03:45:608 MESZ</CreationDate>
+      <LastModificationDate format="yyyy-MM-dd :: HH:mm:ss:SSS z">2012-10-01 :: 15:04:30:953 MESZ</LastModificationDate>
+    </ReviewIssueMeta>
+    <ReviewerId>Rene (rbo)</ReviewerId>
+    <AssignedTo>Rene (rbo)</AssignedTo>
+    <File line="43">src/main/java/de/wps/usermanagement/service/BoardExtService.java</File>
+    <Type>item.type.label.programLogic</Type>
+    <Severity>item.severity.label.minor</Severity>
+    <Summary>Should be removed anyway when having brand new persitance layer</Summary>
+    <Description>copyProperties</Description>
+    <Annotation></Annotation>
+    <Revision></Revision>
+    <Resolution>item.label.unset</Resolution>
+    <Status>item.status.label.open</Status>
+  </ReviewIssue>
+</Review>

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<configuration>
+    <appender name="USERMNG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/opt/tomcat/misc/logs/usermanagement.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/opt/tomcat/misc/logs/usermanagement.%d{yyyy-MM-dd}.log.gz</fileNamePattern>
+            <maxHistory>10</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d [%t] %level: %X{sessionId}%X{username} %logger{50} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    <logger name="de.wps.usermanagement" level="INFO" additivity="false">
+        <appender-ref ref="USERMNG_FILE" />
+    </logger>
+ 
+    <root level="ERROR">
+        <appender-ref ref="USERMNG_FILE" />
+    </root>
+
+	<logger name="ch.qos.logback" level="WARN" additivity="false">
+		<appender-ref ref="USERMNG_FILE" />
+	</logger>
+	
+</configuration>

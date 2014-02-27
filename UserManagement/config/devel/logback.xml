@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<configuration>
+
+	<appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d [%t] %level: %X{sessionId}%X{username} %logger{50} - %msg%n</pattern>
+		</encoder>
+	</appender>
+
+	<logger name="de.wps.usermanagement" level="DEBUG" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="org.springframework" level="INFO" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="org.springframework.aop" level="ERROR" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+
+	<logger name="ch.qos.logback" level="WARN" additivity="false">
+		<appender-ref ref="CONSOLE" />
+	</logger>
+	
+	<root level="WARN">
+		<appender-ref ref="CONSOLE" />
+	</root>
+
+</configuration>

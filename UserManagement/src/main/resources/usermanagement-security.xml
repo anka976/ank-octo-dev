@@ -1,0 +1,39 @@
+<beans:beans xmlns="http://www.springframework.org/schema/security" xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+           http://www.springframework.org/schema/security
+           http://www.springframework.org/schema/security/spring-security-3.0.xsd">
+
+	<global-method-security secured-annotations="disabled" jsr250-annotations="enabled" />
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider ref="ldapAuthProvider"/>
+	</authentication-manager>
+	
+	<beans:bean id="securityContextSource" class="org.springframework.security.ldap.DefaultSpringSecurityContextSource">
+		<beans:constructor-arg value="${de.wps.usermanagement.ldap.providerUrl}" />
+		<beans:property name="userDn" value="${de.wps.usermanagement.ldap.manager.dn}" />
+		<beans:property name="password"	value="${de.wps.usermanagement.ldap.manager.password}" />
+		<beans:property name="baseEnvironmentProperties">
+			<beans:map>
+				<beans:entry key="java.naming.ldap.attributes.binary" value="cryptoContainer userPKCS12 userCertificate" />
+			</beans:map>
+		</beans:property>
+	</beans:bean>
+
+	<beans:bean id="ldapAuthProvider" class="org.springframework.security.ldap.authentication.LdapAuthenticationProvider">
+		<beans:constructor-arg>
+			<beans:bean
+				class="org.springframework.security.ldap.authentication.BindAuthenticator">
+				<beans:constructor-arg ref="securityContextSource" />
+				<beans:property name="userDnPatterns">
+					<beans:list>
+						<beans:value>uid={0},ou=ServiceUser,ou=User</beans:value>
+					</beans:list>
+				</beans:property>
+			</beans:bean>
+		</beans:constructor-arg>
+	</beans:bean>
+
+</beans:beans>
