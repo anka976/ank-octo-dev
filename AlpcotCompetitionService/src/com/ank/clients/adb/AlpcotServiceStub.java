@@ -830,20 +830,20 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 		 */
 
 		/**
-		 * field for Arg0 This was an Array!
+		 * field for Stocks This was an Array!
 		 */
 
-		protected Stock[] localArg0;
+		protected Stock[] localStocks;
 
 		/*
 		 * This tracker boolean wil be used to detect whether the user called
 		 * the set method for this attribute. It will be used to determine
 		 * whether to include this field in the serialized XML
 		 */
-		protected boolean localArg0Tracker = false;
+		protected boolean localStocksTracker = false;
 
-		public boolean isArg0Specified() {
-			return localArg0Tracker;
+		public boolean isStocksSpecified() {
+			return localStocksTracker;
 		}
 
 		/**
@@ -851,14 +851,14 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 		 * 
 		 * @return Stock[]
 		 */
-		public Stock[] getArg0() {
-			return localArg0;
+		public Stock[] getStocks() {
+			return localStocks;
 		}
 
 		/**
-		 * validate the array for Arg0
+		 * validate the array for Stocks
 		 */
-		protected void validateArg0(Stock[] param) {
+		protected void validateStocks(Stock[] param) {
 
 		}
 
@@ -866,15 +866,15 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 		 * Auto generated setter method
 		 * 
 		 * @param param
-		 *            Arg0
+		 *            Stocks
 		 */
-		public void setArg0(Stock[] param) {
+		public void setStocks(Stock[] param) {
 
-			validateArg0(param);
+			validateStocks(param);
 
-			localArg0Tracker = param != null;
+			localStocksTracker = param != null;
 
-			this.localArg0 = param;
+			this.localStocks = param;
 		}
 
 		/**
@@ -883,18 +883,18 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 		 * @param param
 		 *            Stock
 		 */
-		public void addArg0(Stock param) {
-			if (localArg0 == null) {
-				localArg0 = new Stock[] {};
+		public void addStocks(Stock param) {
+			if (localStocks == null) {
+				localStocks = new Stock[] {};
 			}
 
 			// update the setting tracker
-			localArg0Tracker = true;
+			localStocksTracker = true;
 
 			java.util.List list = org.apache.axis2.databinding.utils.ConverterUtil
-					.toList(localArg0);
+					.toList(localStocks);
 			list.add(param);
-			this.localArg0 = (Stock[]) list.toArray(new Stock[list.size()]);
+			this.localStocks = (Stock[]) list.toArray(new Stock[list.size()]);
 
 		}
 
@@ -953,13 +953,13 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 				}
 
 			}
-			if (localArg0Tracker) {
-				if (localArg0 != null) {
-					for (int i = 0; i < localArg0.length; i++) {
-						if (localArg0[i] != null) {
-							localArg0[i].serialize(
-									new javax.xml.namespace.QName("", "arg0"),
-									xmlWriter);
+			if (localStocksTracker) {
+				if (localStocks != null) {
+					for (int i = 0; i < localStocks.length; i++) {
+						if (localStocks[i] != null) {
+							localStocks[i].serialize(
+									new javax.xml.namespace.QName(null,
+											"stocks"), xmlWriter);
 						} else {
 
 							// we don't have to do any thing since minOccures is
@@ -971,7 +971,7 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 				} else {
 
 					throw new org.apache.axis2.databinding.ADBException(
-							"arg0 cannot be null!!");
+							"stocks cannot be null!!");
 
 				}
 			}
@@ -1189,14 +1189,14 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 			java.util.ArrayList elementList = new java.util.ArrayList();
 			java.util.ArrayList attribList = new java.util.ArrayList();
 
-			if (localArg0Tracker) {
-				if (localArg0 != null) {
-					for (int i = 0; i < localArg0.length; i++) {
+			if (localStocksTracker) {
+				if (localStocks != null) {
+					for (int i = 0; i < localStocks.length; i++) {
 
-						if (localArg0[i] != null) {
-							elementList.add(new javax.xml.namespace.QName("",
-									"arg0"));
-							elementList.add(localArg0[i]);
+						if (localStocks[i] != null) {
+							elementList.add(new javax.xml.namespace.QName(null,
+									"stocks"));
+							elementList.add(localStocks[i]);
 						} else {
 
 							// nothing to do
@@ -1207,7 +1207,7 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 				} else {
 
 					throw new org.apache.axis2.databinding.ADBException(
-							"arg0 cannot be null!!");
+							"stocks cannot be null!!");
 
 				}
 
@@ -1292,7 +1292,7 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 						reader.next();
 
 					if (reader.isStartElement()
-							&& new javax.xml.namespace.QName("", "arg0")
+							&& new javax.xml.namespace.QName(null, "stocks")
 									.equals(reader.getName())) {
 
 						// Process the array and step past its final element's
@@ -1317,8 +1317,8 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 								// exiting the xml structure
 								loopDone1 = true;
 							} else {
-								if (new javax.xml.namespace.QName("", "arg0")
-										.equals(reader.getName())) {
+								if (new javax.xml.namespace.QName(null,
+										"stocks").equals(reader.getName())) {
 									list1.add(Stock.Factory.parse(reader));
 
 								} else {
@@ -1329,7 +1329,7 @@ public class AlpcotServiceStub extends org.apache.axis2.client.Stub {
 						// call the converter utility to convert and set the
 						// array
 
-						object.setArg0((Stock[]) org.apache.axis2.databinding.utils.ConverterUtil
+						object.setStocks((Stock[]) org.apache.axis2.databinding.utils.ConverterUtil
 								.convertToArray(Stock.class, list1));
 
 					} // End of if for expected property start element

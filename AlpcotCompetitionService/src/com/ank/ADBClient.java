@@ -16,14 +16,17 @@ import javax.xml.namespace.QName;
 import org.apache.axiom.om.OMAbstractFactory;
 import org.apache.axiom.om.OMElement;
 import org.apache.axiom.om.OMFactory;
+import org.apache.axiom.om.OMNamespace;
 import org.apache.axis2.AxisFault;
 import org.apache.axis2.client.Options;
 import org.apache.axis2.transport.http.HTTPConstants;
+import org.apache.axis2.transport.http.HttpTransportProperties;
 import org.apache.log4j.Logger;
 
 import com.ank.beans.StockUpload;
 import com.ank.clients.adb.AlpcotServiceStub;
 import com.ank.clients.adb.AlpcotServiceStub.Stock;
+//import com.ank.clients.adb.AlpcotServiceStub.Stocks;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -77,11 +80,19 @@ public class ADBClient{
     	Options options = stub._getServiceClient().getOptions();
     	options.setProperty(HTTPConstants.CHUNKED, false);
     	
+    	HttpTransportProperties.ProxyProperties proxyProperties = new HttpTransportProperties.ProxyProperties();
+    	proxyProperties.setProxyName("proxy-europe.int.kn");
+    	proxyProperties.setProxyPort(8080);;
+    	options.setProperty(HTTPConstants.PROXY, proxyProperties);
+    	
     	OMFactory omFactory = OMAbstractFactory.getOMFactory();
-    	OMElement omSecurityElement = omFactory.createOMElement(new QName( "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Security", "wsse"), null);
+    	OMNamespace wsseNamespace = omFactory.createOMNamespace("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "wsse");
+        OMElement omSecurityElement = omFactory.createOMElement("Security", wsseNamespace);
 
+    	omSecurityElement.addAttribute("soapenv:mustUnderstand", "1", null);
 
-    	OMElement omusertoken = omFactory.createOMElement(new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd", "UsernameToken", "wsu"), null);
+    	OMElement omusertoken = omFactory.createOMElement("UsernameToken", wsseNamespace);
+    	omusertoken.addAttribute("xmlns:wsu", "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd", null);
 
     	OMElement omuserName = omFactory.createOMElement(new QName("http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd", "Username", "wsse"), null);
     	omuserName.setText("webServicesUser");
@@ -143,7 +154,9 @@ public class ADBClient{
         		
         		AlpcotServiceStub.ProvideStocksE reqE = new AlpcotServiceStub.ProvideStocksE();
             	AlpcotServiceStub.ProvideStocks req = new AlpcotServiceStub.ProvideStocks();
+//            	Stocks stocks = new Stocks();;
             	Stock stock;
+            	
             	
             	for (com.ank.beans.Stock bookedStock : book.getStock()) {
             		Double value = null;
@@ -165,8 +178,9 @@ public class ADBClient{
                 	cal.setTimeInMillis(book.getTime().getTime());
                 	cal.setTimeZone(timeZone);
                 	stock.setTimestamp(cal);
-                    req.addArg0(stock);
+                	req.addStocks(stock);
             	}
+//            	req.addStocks(stocks);
             	reqE.setProvideStocks(req);
                 stub.provideStocks(reqE);
         	} else {
