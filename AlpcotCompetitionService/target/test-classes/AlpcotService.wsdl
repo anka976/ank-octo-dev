@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header>
+		<wsse:Security
+			xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+			soapenv:mustUnderstand="1">
+			<wsse:UsernameToken
+				xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+				<wsse:Username>webServicesUser</wsse:Username>
+				<wsse:Password
+					Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">abc123</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<ns1:provideStocks xmlns:ns1="http://ws.alpcot.pic.idocs.com/">
+			<stocks xmlns="">
+				<name>LU0539165034</name>
+				<price>66.4500000000000028421709430404007434844970703125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292109690</name>
+				<price>648.1000000000000227373675443232059478759765625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0274211480</name>
+				<price>844.200000000000045474735088646411895751953125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0380865021</name>
+				<price>350</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292103651</name>
+				<price>367.1499999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292109856</name>
+				<price>177.599999999999994315658113919198513031005859375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0322252924</name>
+				<price>183.44999999999998863131622783839702606201171875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0322252171</name>
+				<price>212.75</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292109344</name>
+				<price>267.19999999999998863131622783839702606201171875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292107991</name>
+				<price>242.19999999999998863131622783839702606201171875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292109005</name>
+				<price>203.599999999999994315658113919198513031005859375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292108619</name>
+				<price>291.1000000000000227373675443232059478759765625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292107645</name>
+				<price>240.19999999999998863131622783839702606201171875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0274209237</name>
+				<price>395.3999999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0274209740</name>
+				<price>291.3999999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292100046</name>
+				<price>385.8999999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0322252338</name>
+				<price>329.6499999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0292109187</name>
+				<price>125.2999999999999971578290569595992565155029296875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0274210672</name>
+				<price>297.6499999999999772626324556767940521240234375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0274208692</name>
+				<price>277.55000000000001136868377216160297393798828125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0490618542</name>
+				<price>197.400000000000005684341886080801486968994140625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0561878983</name>
+				<price>138.30000000000001136868377216160297393798828125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>SE0004545135</name>
+				<price>134.150000000000005684341886080801486968994140625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353290</name>
+				<price>145.80000000000001136868377216160297393798828125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353969</name>
+				<price>99.2000000000000028421709430404007434844970703125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353456</name>
+				<price>138.5</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353373</name>
+				<price>130.900000000000005684341886080801486968994140625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0593935454</name>
+				<price>93.5</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353613</name>
+				<price>113.099999999999994315658113919198513031005859375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353704</name>
+				<price>181.75</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353027</name>
+				<price>124.25</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>SE0001710914</name>
+				<price>78.349999999999994315658113919198513031005859375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0569192288</name>
+				<price>113.599999999999994315658113919198513031005859375</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>SE0000693293</name>
+				<price>134.150000000000005684341886080801486968994140625</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>SE0001056045</name>
+				<price>346.05000000000001136868377216160297393798828125</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530354181</name>
+				<price>67.0499999999999971578290569595992565155029296875</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0569192445</name>
+				<price>103.75</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+			<stocks xmlns="">
+				<name>LU0530353886</name>
+				<price>111.5</price>
+				<timestamp>2014-02-28T15:38:00.000+01:00</timestamp>
+			</stocks>
+		</ns1:provideStocks>
+	</soapenv:Body>
+</soapenv:Envelope>
+
