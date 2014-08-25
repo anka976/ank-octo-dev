@@ -40,6 +40,7 @@
     <orderEntry type="library" name="Maven: org.apache.axis2:axis2-adb:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.axis2:axis2-transport-http:1.6.2" level="project" />
     <orderEntry type="library" name="Maven: org.apache.httpcomponents:httpcore:4.0" level="project" />
+    <orderEntry type="library" name="Maven: org.apache.axis2:axis2-transport-local:1.6.2" level="project" />
   </component>
 </module>
 
